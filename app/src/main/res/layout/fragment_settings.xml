@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:paddingStart="16dp"
+    android:paddingTop="56dp"
+    android:paddingEnd="16dp">
+
+    <ImageView
+        android:id="@+id/ivUserAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:translationZ="100dp" />
+
+    <Button
+        android:id="@+id/btnUserAvatar"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ic_green_circle"
+        android:clickable="false"
+        android:textSize="66sp"
+        android:textStyle="bold"
+        android:tint="@color/colorPrimary"
+        tools:text="J" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/ivUserAvatar"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="John Smith" />
+
+    <TextView
+        android:id="@+id/tvUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUserName"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/ivUserAvatar"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="john.smith@mail.com" />
+
+    <Button
+        android:id="@+id/btnLinkGravatar"
+        android:layout_width="140dp"
+        android:layout_height="28dp"
+        android:layout_below="@id/tvUserEmail"
+        android:layout_toEndOf="@id/ivUserAvatar"
+        android:background="@drawable/rectangle_green"
+        android:drawableEnd="@drawable/ic_person_green_24dp"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:text="@string/link_gravatar"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/vTopSectionSeparator"
+        style="@style/HorizontalSeparator"
+        android:layout_below="@id/ivUserAvatar"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/tvEnvironmentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vTopSectionSeparator"
+        android:text="@string/environment"
+        android:textColor="@color/offWhite" />
+
+    <TextView
+        android:id="@+id/tvEnvironmentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEnvironmentLabel"
+        android:layout_marginBottom="32dp"
+        android:ellipsize="end"
+        android:maxWidth="340dp"
+        android:maxLines="1"
+        android:textColor="@color/offWhite"
+        android:textSize="20sp"
+        tools:text="mycoolapp.roninservices.com" />
+
+    <TextView
+        android:id="@+id/tvVersionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEnvironmentName"
+        android:text="@string/version"
+        android:textColor="@color/offWhite" />
+
+    <TextView
+        android:id="@+id/tvVersionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvVersionLabel"
+        android:ellipsize="end"
+        android:maxWidth="340dp"
+        android:maxLines="1"
+        android:textColor="@color/offWhite"
+        android:textSize="20sp"
+        tools:text="1.0.0" />
+
+    <View
+        android:id="@+id/vSecondSectionSeparator"
+        style="@style/HorizontalSeparator"
+        android:layout_below="@id/tvVersionNumber"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vSecondSectionSeparator"
+        android:background="@null"
+        android:text="@string/sign_out"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+</RelativeLayout>

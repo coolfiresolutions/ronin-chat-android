@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ListItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="154dp"
+    android:background="@color/colorPrimaryDark"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp">
+
+    <LinearLayout
+        android:id="@+id/llImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvUser1"
+            style="@style/MessageListItemUserImage"
+            android:tag="1"
+            tools:text="GD" />
+
+        <TextView
+            android:id="@+id/tvUser2"
+            style="@style/MessageListItemUserImage"
+            android:tag="2"
+            android:visibility="gone"
+            tools:text="GD" />
+
+        <TextView
+            android:id="@+id/tvUser3"
+            style="@style/MessageListItemUserImage"
+            android:tag="3"
+            android:visibility="gone"
+            tools:text="GD" />
+
+        <TextView
+            android:id="@+id/tvUser4"
+            style="@style/MessageListItemUserImage"
+            android:tag="4"
+            android:visibility="gone"
+            tools:text="GD" />
+
+        <TextView
+            android:id="@+id/tvUser5"
+            style="@style/MessageListItemUserImage"
+            android:tag="5"
+            android:visibility="gone"
+            tools:text="GD" />
+
+        <TextView
+            android:id="@+id/tvUser6"
+            style="@style/MessageListItemUserImage"
+            android:tag="6"
+            android:visibility="gone"
+            tools:text="GD" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivUnreadBadge"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:paddingEnd="8dp"
+        android:src="@drawable/badge_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llImageContainer" />
+
+    <TextView
+        android:id="@+id/tvConversationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:ellipsize="end"
+        android:maxWidth="260dp"
+        android:maxLines="1"
+        android:textColor="@color/offWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivUnreadBadge"
+        app:layout_constraintTop_toBottomOf="@id/llImageContainer"
+        tools:text="This is a long name This is a long name" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llImageContainer"
+        tools:text="9:41 AM" />
+
+    <TextView
+        android:id="@+id/tvConversationDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:maxWidth="320dp"
+        android:maxLines="1"
+        android:textColor="@color/offWhite"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConversationName"
+        tools:text="This is a long description This is a long description This is a long description This is a long description" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_caret_arrow_right_green_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimestamp" />
+
+    <View
+        style="@style/HorizontalSeparator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

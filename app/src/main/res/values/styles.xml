@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/raleway</item>
+    </style>
+
+    <style name="LoginEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">231dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:backgroundTint">@color/offWhite</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/offWhite</item>
+        <item name="android:textColorHint">@color/offWhite</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:alpha">.5</item>
+    </style>
+
+    <style name="MessageListItemUserImage">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/ic_green_circle</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HorizontalSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">.7dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:alpha">.2</item>
+    </style>
+
+    <style name="ListItemRoot">
+        <item name="android:foreground">@drawable/ripple_effect</item>
+    </style>
+</resources>

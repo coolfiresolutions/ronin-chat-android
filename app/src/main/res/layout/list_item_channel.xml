@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ListItemRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:minHeight="104dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <ImageView
+        android:id="@+id/ivUnreadBadge"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/badge_icon" />
+
+    <TextView
+        android:id="@+id/tvChannelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_toEndOf="@id/ivUnreadBadge"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxWidth="250dp"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Pickup Soccer Team" />
+
+    <TextView
+        android:id="@+id/tvChannelDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvChannelName"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxWidth="300dp"
+        android:textColor="@color/white"
+        tools:text="Coordinating our pickup games" />
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_caret_arrow_right_green_24dp" />
+
+    <TextView
+        android:id="@+id/tvLastMessageUser"
+        style="@style/MessageListItemUserImage"
+        android:layout_below="@id/tvChannelDescription"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ic_green_circle"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        tools:text="J" />
+
+    <TextView
+        android:id="@+id/tvLastMessageUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvChannelDescription"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/tvLastMessageUser"
+        android:ellipsize="end"
+        android:maxWidth="200dp"
+        android:maxLines="1"
+        android:textColor="@color/colorPrimary"
+        tools:text="Johnny Blaze" />
+
+    <TextView
+        android:id="@+id/tvLastMessageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLastMessageUserName"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/tvLastMessageUser"
+        android:ellipsize="end"
+        android:maxWidth="250dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:text="That's so John Blaze, he's the greatest" />
+
+    <View
+        style="@style/HorizontalSeparator"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

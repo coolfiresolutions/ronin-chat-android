@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <include
+        android:id="@+id/topToolbar"
+        layout="@layout/toolbar_top_details" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvMessages"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@id/llMessageEntryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topToolbar" />
+
+    <ImageView
+        android:id="@+id/ivNoMessages"
+        android:layout_width="259dp"
+        android:layout_height="154dp"
+        android:src="@drawable/img_nochat"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/llMessageEntryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topToolbar" />
+
+    <ImageView
+        android:id="@+id/ivErrorMessage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="44dp"
+        android:src="@drawable/img_load_conversation_error"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/llMessageEntryContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topToolbar" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/rlUserDetailsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:alpha=".9"
+        android:background="@color/black"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/topToolbar">
+
+        <Button
+            android:id="@+id/btnCloseDetails"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/ic_keyboard_arrow_up_green_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivUserAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="24dp"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCloseDetails" />
+
+        <Button
+            android:id="@+id/btnUserAvatar"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/ic_green_circle"
+            android:clickable="false"
+            android:textSize="66sp"
+            android:textStyle="bold"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCloseDetails"
+            tools:text="J" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/btnUserAvatar"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/ivUserAvatar"
+            android:ellipsize="end"
+            android:maxWidth="200dp"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/btnUserAvatar"
+            app:layout_constraintTop_toTopOf="@id/btnUserAvatar"
+            tools:text="John Smith" />
+
+        <TextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUserName"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/ivUserAvatar"
+            android:ellipsize="end"
+            android:maxWidth="200dp"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/btnUserAvatar"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            tools:text="john.smith@mail.com" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/llMessageEntryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/chatBox"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/ivAddAttachment"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_add_green_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAttachment" />
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:hint="@string/type_your_message"
+            android:maxWidth="300dp"
+            android:maxLines="3"
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivSend"
+            app:layout_constraintStart_toEndOf="@id/ivAddAttachment"
+            app:layout_constraintTop_toBottomOf="@id/ivAttachment" />
+
+        <ImageView
+            android:id="@+id/ivAttachment"
+            android:layout_width="168dp"
+            android:layout_height="168dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/ivAddAttachment"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivRemoveAttachment"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_cancel_white_24dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/ivAttachment"
+            app:layout_constraintTop_toTopOf="@id/ivAttachment" />
+
+        <ProgressBar
+            android:id="@+id/pbAttachmentProgress"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/ivAttachment"
+            app:layout_constraintEnd_toEndOf="@id/ivAttachment"
+            app:layout_constraintStart_toStartOf="@id/ivAttachment"
+            app:layout_constraintTop_toTopOf="@id/ivAttachment" />
+
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha=".6"
+            android:src="@drawable/ic_send_white_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAttachment" />
+
+        <ProgressBar
+            android:id="@+id/pbSendingProgress"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha=".6"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAttachment" />
+
+        <View
+            style="@style/HorizontalSeparator"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha=".6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivAddAttachment" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
