@@ -37,7 +37,6 @@ class LoginFragment : BaseFragment(), RoninChatApplication.LoginCallback {
         btnLogin.setOnClickListener {
             hideKeyboard()
             attemptLogin()
-            displayLoader(true)
         }
     }
 
@@ -46,7 +45,10 @@ class LoginFragment : BaseFragment(), RoninChatApplication.LoginCallback {
             etInstanceUrl.text.isNullOrEmpty() -> Toast.makeText(activity, "Enter an instance url.", Toast.LENGTH_SHORT).show()
             etUsername.text.isNullOrEmpty() -> Toast.makeText(activity, "Enter a username.", Toast.LENGTH_SHORT).show()
             etPassword.text.isNullOrEmpty() -> Toast.makeText(activity, "Enter a password.", Toast.LENGTH_SHORT).show()
-            else -> listener.onLoginClicked(etInstanceUrl.text.toString(), etUsername.text.toString(), etPassword.text.toString(), this)
+            else -> {
+                listener.onLoginClicked(etInstanceUrl.text.toString(), etUsername.text.toString(), etPassword.text.toString(), this)
+                displayLoader(true)
+            }
         }
     }
 
@@ -64,7 +66,7 @@ class LoginFragment : BaseFragment(), RoninChatApplication.LoginCallback {
     override fun onLoginFailure() {
         activity?.runOnUiThread {
             displayLoader(false)
-            Toast.makeText(activity, "Unable to authenticate. Verify you are connected to the internet and try again.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "Unable to authenticate. Ensure your instance URL is correct and that you are connected to the internet.", Toast.LENGTH_SHORT).show()
         }
     }
 }
