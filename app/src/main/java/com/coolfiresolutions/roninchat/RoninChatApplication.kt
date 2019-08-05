@@ -77,6 +77,9 @@ class RoninChatApplication : Application() {
                 networks?.let {
                     if (it.isNotEmpty()) {
                         connectToNetwork(it[0].id)
+                    } else {
+                        showToast("Please ensure there is a network on your environment before logging in")
+                        loginCallback.onLoginFailure()
                     }
                 }
             }
@@ -148,7 +151,6 @@ class RoninChatApplication : Application() {
 
         override fun onAuthError(authError: AuthError) {
             loginCallback.onLoginFailure()
-            showToast("Unable to authenticate. Verify you are connected to the internet and try again.")
         }
 
         override fun onSocketConnected() {
